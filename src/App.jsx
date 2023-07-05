@@ -1,9 +1,11 @@
-import { Home, About } from "./tutorial/04-project-structure/starter/Pages";
+import Example from "./tutorial/04-project-structure/starter/Example";
+import { Test } from "./Test";
+
 function App() {
   return (
     <div className="container">
-      <About />
-      <Home />
+      <Example />
+      <Test />
     </div>
   );
 }
