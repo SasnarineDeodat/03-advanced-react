@@ -10,7 +10,8 @@ const UseStateBasics = () => {
   const [count, setCount] = useState(0);
 
   const handleClick = () => {
-    // setCount(count + 1);
+    setCount(count + 1);
+    console.log(count);
     // setCount("pants");
   };
 
