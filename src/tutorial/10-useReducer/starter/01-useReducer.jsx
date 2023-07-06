@@ -17,6 +17,14 @@ const reducer = (state, action) => {
   if (action.type === "RESET_LIST") {
     return { ...state, people: data };
   }
+  if (action.type === "REMOVE_ITEM") {
+    // console.log(action);
+    let newPeople = state.people.filter(
+      (person) => person.id !== action.payload.id,
+    );
+
+    return { ...state, people: newPeople };
+  }
   // return state;
   throw new Error(`No matching "${action.type}" - action type`);
 };
@@ -25,8 +33,7 @@ const ReducerBasics = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
 
   const removeItem = (id) => {
-    // let newPeople = people.filter((person) => person.id !== id);
-    // setPeople(newPeople);
+    dispatch({ type: REMOVE_ITEM, payload: { id } });
   };
   const clearList = () => {
     dispatch({ type: CLEAR_LIST });
